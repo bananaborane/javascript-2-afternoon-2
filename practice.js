@@ -19,6 +19,9 @@ var arr = [10,20,30];
 
 //Code Here
 
+let first = (arr)=>{return arr[0]}
+
+
 
 
 ////////// PROBLEM 2 //////////
@@ -33,6 +36,8 @@ var arr = [40,50,60];
 */
 
 //Code Here
+let last = function(arr){return arr[arr.length-1]}
+
 
 
 
@@ -48,6 +53,12 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 */
 
 //Code Here
+let looper = (family)=>{
+  family.forEach((element)=>{alert(element)})  
+}
+
+
+
 
 
 
@@ -62,7 +73,14 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
+
+let letter = [1,2,3,4,5]
 //Code Here
+let reversedLooper = function(letter){
+  for(let j = letter.length - 1;j >= 0 ;j--){
+    alert(letter[j]);
+  }
+}
 
 
 
@@ -78,7 +96,10 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
 */
 
 //Code Here
-
+function evenFinder(nums){
+  nums = nums.filter((element)=>{return element%2===0})
+  return nums;
+}
 
 
 
@@ -106,6 +127,14 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 */
 
 //Code Here
+function divider(numbersArray){
+  let sortedArray = [];
+  let evenArray = numbersArray.filter((element)=>{return element%2===0})
+  let oddArray = numbersArray.filter((element)=>{return element%2!==0})
+  sortedArray.push(evenArray);
+  sortedArray.push(oddArray);
+  return sortedArray;
+}
 
 
 
@@ -127,6 +156,16 @@ var getRandomArbitrary = function() {
 */
 
 //Code Here
+let finder = (array)=>{
+  let randomNum = getRandomArbitrary();
+  let randomNumberflag = false;
+  array.forEach((value, i, array)=>{
+    if (array[i]===randomNum){
+      randomNumberflag=true;;
+    } else {randomNumberflag=false;}
+  })
+  return randomNumberflag;
+}
 
 
 
@@ -156,6 +195,24 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+let removeItem = (arr, item)=>{
+  if (!arr || !item){
+    return [];  }
+  arr.forEach(function(val, i, arr){
+     if (arr[i]===item){
+      arr.splice(i, 1)
+    }
+  })
+  return arr;
+}
+
+let addItem = (arr, item)=>{
+  if (!arr || !item){
+    return [];
+  }
+  arr.push(item)
+  return arr;
+}
 
 
 
@@ -166,6 +223,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
+
+function maker(){
+  let superLargeArray = [];
+  for(let i = 1;i<=215;i++){
+    superLargeArray.push(i);
+  }
+  return superLargeArray;
+}
 
 
 
@@ -182,6 +247,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 */
   
 //Code Here
+let addTen = function(numbers){
+  let addedTenArray = [];
+  for(let i = 0;i < numbers.length; i++){
+    addedTenArray.push(+numbers[i]+10);
+  }
+  return addedTenArray;
+}
+
 
 
 
@@ -208,6 +281,13 @@ for(var i = 0; i < num2; i++){
 
 //Code Here
 
+let longer = function(arr1, arr2){
+  if (arr1.length>arr2.length){
+    return arr1
+  } else {
+    return arr2}
+}
+
 
 
 /*
@@ -219,6 +299,17 @@ for(var i = 0; i < num2; i++){
 */
 
 //Code Here
+function both(arr1, arr2){
+  let duplicatesInArray = [];
+  arr1.forEach(function(val, i, arr){
+    arr2.forEach(function(val, j, arr){
+      if (arr1[i]===arr2[j]){
+        duplicatesInArray.push(arr1[i])
+      }
+    })
+  })
+  return duplicatesInArray;
+}
 
 
 
@@ -259,6 +350,8 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees=[tyler, cahlan, ryan, colt];
+console.log(devMountainEmployees.length);
 
 
 
@@ -268,6 +361,7 @@ var colt = {
 */
 
 //Code Here
+devMountainEmployees.splice(1,1)
 
 
 
@@ -280,6 +374,7 @@ var colt = {
 */
 
 //Code Here
+let users = [];
 
 
 
@@ -299,6 +394,10 @@ var user1 = {
 // Do not edit the code above.
 
 //Code Here
+users = [user1, 
+  {name: 'name1'},
+  {name: 'name2'}
+];
 
 
 
@@ -313,6 +412,17 @@ var user1 = {
 */
 
 //Code Here
+
+function goodByeTyler(arr){for (let i = 0;i<arr.length;i++){
+  if (arr[i].email==='tylermcginnis33@gmail.com'){
+    arr.splice(i, 1)
+  }
+}}
+
+goodByeTyler(users);
+
+
+
 
 
 
